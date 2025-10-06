@@ -85,7 +85,12 @@ const AddItems = () => {
 };
 
 const AddItemToFireBase = () => {
-  if (titleEl && priceEl && itemImageEl) {
+  if (
+    titleEl.value.trim() &&
+    priceEl.value.trim() &&
+    descriptionEl.value.trim() &&
+    itemImageEl.value.trim()
+  ) {
     db.collection("AddItems")
       .add({
         title: titleEl.value,
@@ -103,6 +108,8 @@ const AddItemToFireBase = () => {
       .catch((error) => {
         console.error("Error adding document: ", error);
       });
+  } else {
+    alert("fill all the fields");
   }
 };
 
@@ -120,7 +127,6 @@ const addCard = (e) => {
   const CardObj = e.data();
   CardObj.id = e.id;
   const { user, id, title, price, image, description, name } = CardObj;
-  console.log(id);
 
   let cards = document.createElement("div");
   cards.className =
