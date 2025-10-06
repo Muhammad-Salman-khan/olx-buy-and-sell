@@ -14,14 +14,12 @@ const SignUp = () => {
         const user = userCredential.user;
         messageEl.className = "text-green-500 text-center";
         messageEl.innerText = `User signUp successfully with userid ${user.uid}`;
-        console.log(user.uid);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         messageEl.innerText = errorMessage;
         messageEl.className = "text-red-400  text-center";
-        console.log(errorCode, errorMessage);
       });
   }
 };
@@ -37,8 +35,6 @@ const Login = () => {
         localStorage.setItem("userid", user.uid);
         localStorage.setItem("username", UsernameInputEl.value);
         username = localStorage.getItem("username");
-        console.log(username);
-        console.log(userid);
         setTimeout(() => {
           messageEl.innerHTML = "Wait for redirect";
         }, 2000);
@@ -49,7 +45,6 @@ const Login = () => {
         const errorMessage = error.message;
         messageEl.innerText = errorMessage;
         messageEl.className = "text-red-400  text-center";
-        console.log(errorCode, errorMessage);
       });
   }
 };
@@ -101,7 +96,6 @@ const AddItemToFireBase = () => {
         user: auth.currentUser.uid,
       })
       .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
         alert("Item has been added ");
 
         ReDirectToPage("../olx.html");
@@ -167,6 +161,6 @@ const addCard = (e) => {
   DivCards.append(cards);
 };
 
-const AddToCart = (id) => {
-  console.log(id);
-};
+// const AddToCart = (id) => {
+//   console.log(id);
+// };
