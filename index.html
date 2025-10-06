@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./assets/olx-svgrepo-com.svg" />
+    <title>OLX SignUp</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-auth-compat.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyClEoRflVr82C_-G_WGtyUSCcoS9mRsTcQ",
+        authDomain: "fire-8ae22.firebaseapp.com",
+        projectId: "fire-8ae22",
+        storageBucket: "fire-8ae22.firebasestorage.app",
+        messagingSenderId: "762056347449",
+        appId: "1:762056347449:web:a8070511a8ada14cb222e8",
+        measurementId: "G-VLNP9K22EL",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body
+    class="flex items-center justify-center min-h-screen bg-[#0A0A0A] text-gray-100 font-[system-ui] antialiased px-4"
+  >
+    <div
+      class="w-full max-w-sm sm:max-w-md md:max-w-lg bg-black/40 backdrop-blur-2xl rounded-2xl shadow-2xl p-8 border border-white/10"
+    >
+      <div class="flex justify-center align-middle items-center gap-3">
+        <h1 class="font-[system-ui] text-3xl">Welcome to</h1>
+        <img
+          src="./assets/olx-svgrepo-com.svg"
+          alt="Logo"
+          class="invert-100 h-12"
+        />
+      </div>
+      <p id="message" class="text-center"></p>
+
+      <div class="flex flex-col space-y-4">
+        <label class="font-medium text-sm" for="usernameField">Username</label>
+        <input
+          id="usernameInput"
+          class="h-12 px-4 w-full rounded-lg bg-white/10 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
+          type="text"
+          placeholder="Enter your username "
+        />
+        <label class="font-medium text-sm" for="usernameField"
+          >Username or Email</label
+        >
+        <input
+          id="emailInput"
+          class="h-12 px-4 w-full rounded-lg bg-white/10 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
+          type="text"
+          placeholder="Enter your username or email"
+        />
+
+        <label class="font-medium text-sm" for="passwordField">Password</label>
+        <input
+          id="passwordInput"
+          class="h-12 px-4 w-full rounded-lg bg-white/10 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
+          type="password"
+          placeholder="Enter your password"
+        />
+
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between sm:space-x-4 mt-6 w-full"
+        >
+          <button
+            onclick="SignUp()"
+            class="h-12 flex-1 rounded-xl bg-gradient-to-b from-white/90 to-white/70 text-black font-semibold tracking-wide shadow-[inset_0_0_4px_rgba(255,255,255,0.4),0_4px_12px_rgba(255,255,255,0.1)] hover:shadow-[inset_0_0_6px_rgba(255,255,255,0.6),0_6px_16px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 ease-out backdrop-blur-md"
+          >
+            Sign Up
+          </button>
+
+          <button
+            onclick="Login()"
+            class="h-12 flex-1 mt-4 sm:mt-0 rounded-xl bg-gradient-to-b from-blue-500/90 to-blue-400/80 text-white font-semibold tracking-wide shadow-[inset_0_0_6px_rgba(255,255,255,0.3),0_4px_12px_rgba(0,0,0,0.4)] hover:shadow-[inset_0_0_8px_rgba(255,255,255,0.4),0_6px_16px_rgba(0,0,0,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 ease-out backdrop-blur-md"
+          >
+            Log In
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./src/app.js" defer></script>
+  </body>
+</html>

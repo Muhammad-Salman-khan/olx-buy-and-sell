@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./assets/olx-svgrepo-com.svg" />
+    <title>OLX</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-auth-compat.js"></script>
+
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <script type="module">
+    const firebaseConfig = {
+      apiKey: "AIzaSyClEoRflVr82C_-G_WGtyUSCcoS9mRsTcQ",
+      authDomain: "fire-8ae22.firebaseapp.com",
+      projectId: "fire-8ae22",
+      storageBucket: "fire-8ae22.firebasestorage.app",
+      messagingSenderId: "762056347449",
+      appId: "1:762056347449:web:a8070511a8ada14cb222e8",
+      measurementId: "G-VLNP9K22EL",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <body
+    class="min-h-screen flex items-center justify-center bg-gradient-t bg-[#0A0A0A] font-[system-ui] antialiased text-gray-100"
+  >
+    <div
+      class="w-full max-w-sm backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl shadow-2xl p-8 space-y-6 transition-all duration-300"
+    >
+      <div class="text-center space-y-1">
+        <h1 class="text-3xl font-semibold tracking-tight">Create a Product</h1>
+        <p class="text-gray-400 text-sm">Create a new product</p>
+      </div>
+
+      <div class="space-y-5">
+        <div class="flex flex-col space-y-2">
+          <label for="itemName" class="text-sm text-gray-400">Item Name</label>
+          <input
+            id="titleEl"
+            type="text"
+            placeholder="Enter Item title"
+            class="w-full rounded-xl bg-white/10 border border-white/10 px-4 py-2.5 text-gray-100 placeholder-gray-500 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-all duration-200"
+          />
+        </div>
+       
+
+        <div class="flex flex-col  mt-2 space-y-2">
+          <label for="price" class="text-sm text-gray-400">Price</label>
+          <input
+            id="priceEl"
+            type="number"
+            placeholder="Enter Amount"
+            class="w-full rounded-xl bg-white/10 border border-white/10 px-4 py-2.5 text-gray-100 placeholder-gray-500 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-all duration-200"
+          />
+        </div>
+
+        <div class="flex flex-col mt-2 space-y-2">
+          <label for="desc" class="text-sm text-gray-400">Description</label>
+          <textarea
+            id="descriptionEl"
+            rows="3"
+            placeholder="Lightweight. Powerful. Silent."
+            class="w-full rounded-xl bg-white/10 border border-white/10 px-4 py-2.5 text-gray-100 placeholder-gray-500 focus:ring-2 focus:ring-indigo-400 focus:outline-none resize-none transition-all duration-200"
+          ></textarea>
+        </div>
+
+ <div class="flex flex-col mt-2 space-y-2">
+          <label for="itemImage" class="text-sm text-gray-400">Item Image Link</label>
+          <input
+            id="itemImageEl"
+            type="text"
+            placeholder="Enter Image Link"
+            class="w-full rounded-lg bg-white/10 border border-white/10  px-4 py-2.5 text-gray-100 placeholder-gray-500 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-all duration-200"
+          />
+        </div>
+      <div class="pt-4 mt-4">
+        <button
+          onclick="AddItemToFireBase()"
+          class="w-full border-2  py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold text-white tracking-wide shadow-lg shadow-indigo-900/30 transition-all duration-300"
+        >
+          Add Item
+        </button>
+      </div>
+    </div>
+    <script src="./src/app.js" defer></script>
+  </body>
+</html>
